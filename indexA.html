@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Creating Tab Containers in Code</title>
+    <link rel="stylesheet" type="text/css" href="app/lib/dojo/resources/dojo.css"/>
+    <link rel="stylesheet" type="text/css" href="app/lib/dijit/themes/tundra/tundra.css"/>
+    <link rel="stylesheet" type="text/css" href="app/lib/dijit/themes/claro/claro.css"/>
+    <script djConfig="parseOnLoad:true" type="text/javascript" src="app/lib/dojo/dojo.js"></script>
+    <script type="text/javascript">
+	
+      dojo.require("dojo.parser");
+      dojo.require("dijit.layout.ContentPane");
+      dojo.require("dijit.layout.TabContainer");
+	  
+      dojo.addOnLoad(function () {
+        var container = new dijit.layout.TabContainer({
+          style: "width:660px; height: 500px;"
+        }, "tab");
+        var page1 = new dijit.layout.ContentPane({
+          title: "Tab 1"
+        });
+        page1.domNode.innerHTML = '<b>Ralph Kramden < b><br>CEO';
+        var page2 = new dijit.layout.ContentPane({
+          title: "Tab 2"
+        });
+        page2.domNode.innerHTML = "<b>Ed Norton < /b><br>VP Operations";
+        var page3 = new dijit.layout.ContentPane({
+          title: "Tab 3"
+        });
+        page3.domNode.innerHTML = "<b>Alice Kramden < /b><br>VP Marketing";
+        var page4 = new dijit.layout.ContentPane({
+          title: "Tab 4",
+          closable: true
+        });
+        page4.domNode.innerHTML = "<b>TrixieNorton < /b><br>Treasurer";
+        container.addChild(page1);
+        container.addChild(page2);
+        container.addChild(page3);
+        container.addChild(page4);
+        container.startup();
+      });
+      //dojo.ready(()=>{alert("ready")})
+    </script>
+  </head>
+  <body class="claro">
+    <h3>Creating Tab Containers in Code..</h3>
+    <button dojoType="dijit/form/Button"> next
+      <script type="dojo/method" event="onClick" args="evt">dijit.byId("tab").back( );</script>
+    </button>
+    </br>
+    <div id="tab"></div>
+  </body>
+</html>

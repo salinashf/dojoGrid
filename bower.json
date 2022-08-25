@@ -1,0 +1,27 @@
+{
+  "name": "dojo_test",
+  "authors": [
+    "Salinas Flores Henry <salinashf@gmail.com>"
+  ],
+  "description": "practica de dojo",
+  "main": "app.js",
+  "keywords": [
+    "app_dojo"
+  ],
+  "license": "1.0",
+  "homepage": "localhost:8088",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "dojo": "dojo/dojo#^1.17.2",
+    "dijit": "dojo/dijit#^1.17.2",
+    "dojox": "dojo/dojox#^1.17.2",
+    "dojo-util": "dojo/util#^1.17.2"
+  }
+}
